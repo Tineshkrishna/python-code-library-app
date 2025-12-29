@@ -1,50 +1,51 @@
 ---
-version: "3.8"
+version: '3.8'
 services:
   db:
     image: tineshdocker/db
     ports:
-      - "5678:3306"
+      - "9999:3306"
     deploy:
       replicas: 1
     networks:
-      - project
-    
+      - gcp7
+
   auth_service:
     image: tineshdocker/auth
     ports:
-      - "9876:5001"
+      - "8888:5001"
     deploy:
       replicas: 1
     networks:
-      - project
-   
+      - gcp7 
+
   book_service:
     image: tineshdocker/book
     ports:
-      - "8765:5002"
+      - "7777:5002"
     deploy:
       replicas: 1
     networks:
-      - project
+      - gcp7
 
   borrow_service:
     image: tineshdocker/borrow
     ports:
-      - "7654:5003"
+      - "6666:5003"
     deploy:
       replicas: 1
     networks:
-      - project
+      - gcp7
 
   frontend:
     image: tineshdocker/frontend
     ports:
-      - "6543:5000"
+      - "5555:5000"
     deploy:
       replicas: 1
     networks:
-      - project
+      - gcp7
+
 
 networks:
-  project:
+       gcp7:
