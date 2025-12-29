@@ -1,26 +1,50 @@
 ---
+version: "3.8"
 services:
   db:
     image: tineshdocker/db
     ports:
       - "1234:3306"
-
+    deploy:
+      replicas: 1
+    networks:
+      - project
+    
   auth_service:
     image: tineshdocker/auth
     ports:
       - "5001:5001"
-
+    deploy:
+      replicas: 1
+    networks:
+      - project
+   
   book_service:
     image: tineshdocker/book
     ports:
       - "5002:5002"
+    deploy:
+      replicas: 1
+    networks:
+      - project
 
   borrow_service:
     image: tineshdocker/borrow
     ports:
       - "5003:5003"
+    deploy:
+      replicas: 1
+    networks:
+      - project
 
   frontend:
     image: tineshdocker/frontend
     ports:
-      - "5000:5000"   # docker stack file
+      - "5000:5000"
+    deploy:
+      replicas: 1
+    networks:
+      - project
+
+networks:
+  project
