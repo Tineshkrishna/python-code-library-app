@@ -8,7 +8,7 @@ services:
     deploy:
       replicas: 1
     networks:
-      - gcp7
+      - gcp9
 
   auth_service:
     image: tineshdocker/py-jen1:auth
@@ -17,16 +17,16 @@ services:
     deploy:
       replicas: 1
     networks:
-      - gcp7 
+      - gcp9 
 
   book_service:
     image: tineshdocker/py-jen1:book
     ports:
-      - "7777:5002"
+      - "9999:5002"
     deploy:
       replicas: 1
     networks:
-      - gcp7
+      - gcp9
 
   borrow_service:
     image: tineshdocker/py-jen1:borrow
@@ -35,7 +35,7 @@ services:
     deploy:
       replicas: 1
     networks:
-      - gcp7
+      - gcp9
 
   frontend:
     image: tineshdocker/py-jen1:frontend
@@ -44,8 +44,8 @@ services:
     deploy:
       replicas: 1
     networks:
-      - gcp7
+      - gcp9
 
 
 networks:
-       gcp7:
+       gcp9:
