@@ -13,7 +13,7 @@ services:
   auth_service:
     image: tineshdocker/auth
     ports:
-      - "5001:5001"
+      - "9876:5001"
     deploy:
       replicas: 1
     networks:
@@ -22,7 +22,7 @@ services:
   book_service:
     image: tineshdocker/book
     ports:
-      - "5002:5002"
+      - "8765:5002"
     deploy:
       replicas: 1
     networks:
@@ -31,7 +31,7 @@ services:
   borrow_service:
     image: tineshdocker/borrow
     ports:
-      - "5003:5003"
+      - "7654:5003"
     deploy:
       replicas: 1
     networks:
@@ -40,7 +40,7 @@ services:
   frontend:
     image: tineshdocker/frontend
     ports:
-      - "5000:5000"
+      - "6543:5000"
     deploy:
       replicas: 1
     networks:
