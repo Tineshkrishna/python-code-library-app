@@ -4,7 +4,7 @@ services:
   db:
     image: tineshdocker/db
     ports:
-      - "1234:3306"
+      - "5678:3306"
     deploy:
       replicas: 1
     networks:
