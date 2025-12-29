@@ -1,0 +1,26 @@
+---
+services:
+  db:
+    image: tineshdocker/db
+    ports:
+      - "1234:3306"
+
+  auth_service:
+    image: tineshdocker/auth
+    ports:
+      - "5001:5001"
+
+  book_service:
+    image: tineshdocker/book
+    ports:
+      - "5002:5002"
+
+  borrow_service:
+    image: tineshdocker/borrow
+    ports:
+      - "5003:5003"
+
+  frontend:
+    image: tineshdocker/frontend
+    ports:
+      - "5000:5000"   # docker stack file
