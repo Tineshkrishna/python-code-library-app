@@ -2,7 +2,7 @@
 version: '3.8'
 services:
   db:
-    image: tineshdocker/db
+    image: tineshdocker/py-jen1:db
     ports:
       - "9999:3306"
     deploy:
@@ -11,7 +11,7 @@ services:
       - gcp7
 
   auth_service:
-    image: tineshdocker/auth
+    image: tineshdocker/py-jen1:auth
     ports:
       - "8888:5001"
     deploy:
@@ -20,7 +20,7 @@ services:
       - gcp7 
 
   book_service:
-    image: tineshdocker/book
+    image: tineshdocker/py-jen1:book
     ports:
       - "7777:5002"
     deploy:
@@ -29,7 +29,7 @@ services:
       - gcp7
 
   borrow_service:
-    image: tineshdocker/borrow
+    image: tineshdocker/py-jen1:borrow
     ports:
       - "6666:5003"
     deploy:
@@ -38,7 +38,7 @@ services:
       - gcp7
 
   frontend:
-    image: tineshdocker/frontend
+    image: tineshdocker/py-jen1:frontend
     ports:
       - "5555:5000"
     deploy:
